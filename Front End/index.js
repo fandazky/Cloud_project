@@ -26,12 +26,12 @@ passport.use(new LocalStrategy(function(username, password, done) {
     // username, password => inputan user dari form
     // done => sebuah fungsi callback, kalau login cocok, argumen kedua isinya data user
     //         kalau nggak, argumen kedua isinya "false"
-//    if(username == "admin" && password == "admin123") {
-//        done(null, {username: "admin"})
-//
-//    } else {
-//        done(null, false, {message: "User atau password salah"});
-//    }
+    //    if(username == "admin" && password == "admin123") {
+    //        done(null, {username: "admin"})
+    //
+    //    } else {
+    //        done(null, false, {message: "User atau password salah"});
+    //    }
     connection.query("SELECT * FROM user WHERE username='" + username + "'", function(err, rows, fields) {
         if(rows.length > 0) {
             if(rows[0].password == password) {
@@ -56,7 +56,7 @@ passport.deserializeUser(function(user, done) {
 
 
 app.get('/', function(req, res) {
-    res.redirect('/login');
+    res.redirect('/home');
 });
 
 
@@ -77,7 +77,12 @@ app.post('/register', function(req, res) {
 app.get('/login', function(req, res) {
     res.render('login');
 });
-
+app.get('/dashboard', function(req, res) {
+    res.render('dashboard');
+});
+app.get('/home', function(req, res) {
+    res.render('home');
+});
 //app.post('/login', function(req, res) {
 //    // req.body => butuh body-parser buat mbacanya
 //    if(req.body.username=="admin" && req.body.password=="admin123") {
