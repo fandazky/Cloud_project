@@ -296,20 +296,46 @@ button::-moz-focus-inner {
 	font-size: 0.85em;
 	border-color:#D3D3D3;
 }
+.payment-online-form-left input[type="password"]{
+	padding: 1em 1em;
+	color:#D5D5D5;
+	width: 42%;
+	margin: 0.5em 0;
+	border: 1px solid;
+	outline: none;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+	float: left;
+	font-size: 0.85em;
+	border-color:#D3D3D3;
+}
 .payment-online-form-left input[type="text"]:hover{
+	border-color:#E74C3C;
+}
+.payment-online-form-left input[type="password"]:hover{
 	border-color:#E74C3C;
 }
 .text-box-dark{
 }
 .text-box-light{
-	background: url(../images/calender.png) no-repeat 95% 50%;
+	background: url(/public/bower_components/images/calender.png) no-repeat 95% 50%;
 	cursor:pointer;
 	position: relative;
 }
 .payment-online-form-left ul li:first-child input[type="text"]{
 	margin-right: 5%;
 }
+.payment-online-form-left ul li:first-child input[type="password"]{
+	margin-right: 5%;
+}
 .payment-online-form-left  input[type="text"]:active, .payment-online-form-left input[type="text"]:hover {
+	border-color:#999 ;
+	color:#2bdefc;
+}
+.payment-online-form-left  input[type="password"]:active, .payment-online-form-left input[type="password"]:hover {
 	border-color:#999 ;
 	color:#2bdefc;
 }
@@ -322,16 +348,16 @@ ul{
 	width: 32px;
 	height: 32px;
 	display: inline-block;
-	background: url(../images/img-sprite.png)no-repeat -134px -306px;
+	background: url(/public/bower_components/images/img-sprite.png)no-repeat -134px -306px;
 }
 .payment{
 	width: 35px;
 	height: 32px;
 	display: inline-block;
-	background: url(../images/img-sprite.png) no-repeat -174px -309px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat -174px -309px;
 }
 .payment-date-section{
-	background: url(../images/calender.png) no-repeat #fff 50%;
+	background: url(/public/bower_components/images/calender.png) no-repeat #fff 50%;
 }
 .payment-sendbtns{
 	float:right;
@@ -403,10 +429,10 @@ input[type=checkbox].css-checkbox1 + label.css-label1 {
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	cursor: pointer;
-	background: url(../images/img-sprite.png) no-repeat -216px -311px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat -216px -311px;
 }
 input[type=checkbox].css-checkbox1:checked + label.css-label1 {
-	background: url(../images/icon.png) no-repeat -224px -203px;
+	background: url(/public/bower_components/images/icon.png) no-repeat -224px -203px;
 }
 input[type=checkbox].css-checkbox2 + label.css-label2 {
 	height: 28px;
@@ -416,22 +442,22 @@ input[type=checkbox].css-checkbox2 + label.css-label2 {
 	background-repeat: no-repeat;
 	background-position: -20px 0px;
 	cursor: pointer;
-	background: url(../images/img-sprite.png) no-repeat -238px -309px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat -238px -309px;
 }
 input[type=checkbox].css-checkbox2:checked + label.css-label2 {
-	background: url(../images/img-sprite.png) no-repeat  -239px -209px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat  -239px -209px;
 }
 .visa{
 	display: inline-block;
 	width: 32px;
 	height: 32px;
-	background: url(../images/img-sprite.png) no-repeat -53px -309px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat -53px -309px;
 }
 .paypal{
 	display: inline-block;
 	width: 32px;
 	height: 32px;
-	background: url(../images/img-sprite.png) no-repeat -94px -306px;
+	background: url(/public/bower_components/images/img-sprite.png) no-repeat -94px -306px;
 }
 .payment-online-form-right{
 	float: right;
@@ -492,7 +518,7 @@ input[type=checkbox].css-checkbox3 + label.css-label3 {
 	background-position: 0 -38px;
 	vertical-align: middle;
 	cursor: pointer;
-	background-image: url(../images/filter-bg.png);
+	background-image: url(/public/bower_components/images/filter-bg.png);
 }
 input[type=checkbox].css-checkbox3:checked + label.css-label3 {
 	background-position: 0px 0px;
@@ -506,7 +532,7 @@ input[type=checkbox].css-checkbox4 + label.css-label4 {
 	background-position: 0 0px;
 	vertical-align: middle;
 	cursor: pointer;
-	background-image: url(../images/filter-bg.png);
+	background-image: url(/public/bower_components/images/filter-bg.png);
 }
 input[type=checkbox].css-checkbox4:checked + label.css-label4 {
 	background-position: 0px -38px;
@@ -520,7 +546,7 @@ input[type=checkbox].css-checkbox5 + label.css-label5 {
 	background-position: 0 -38px;
 	vertical-align: middle;
 	cursor: pointer;
-	background-image: url(../images/filter-bg.png);
+	background-image: url(/public/bower_components/images/filter-bg.png);
 }
 input[type=checkbox].css-checkbox5:checked + label.css-label5 {
 	background-position: 0px 0px;
@@ -534,7 +560,7 @@ input[type=checkbox].css-checkbox6 + label.css-label6 {
 	background-position: 0 0px;
 	vertical-align: middle;
 	cursor: pointer;
-	background-image: url(../images/filter-bg.png);
+	background-image: url(/public/bower_components/images/filter-bg.png);
 }
 input[type=checkbox].css-checkbox6:checked + label.css-label6 {
 	background-position: 0px -38px;
@@ -634,6 +660,9 @@ border-radius: 2px;
 	.comments-area input[type="text"], .comments-area textarea{
 		width:92%;
 	}
+	.comments-area input[type="password"], .comments-area textarea{
+		width:92%;
+	}
 	.comments-area div{
 		padding:2px 0;
 	}
@@ -648,10 +677,18 @@ border-radius: 2px;
 	.signup input[type="text"] {
 		width: 90%;
 	}
+	.signup input[type="password"] {
+		width: 90%;
+	}
 	.payment-online-form-left h4 {
 		font-size: 1.3em;
 	}
 	.payment-online-form-left input[type="text"] {
+		padding: 10px;
+		font-size: 0.8125em;
+		width:100%;
+	}
+	.payment-online-form-left input[type="password"] {
 		padding: 10px;
 		font-size: 0.8125em;
 		width:100%;

@@ -99,7 +99,7 @@ app.get('/home', function(req, res) {
 //    }
 //});
 
-app.post('/login', passport.authenticate('local', { successRedirect: '/app',failureRedirect: '/login',
+app.post('/home', passport.authenticate('local', { successRedirect: '/app',failureRedirect: '/home',
                                    failureFlash: false })
 );
 
