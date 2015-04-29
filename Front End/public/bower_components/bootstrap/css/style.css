@@ -28,6 +28,14 @@ body a{
 	-o-background-size: cover;
 	height: 810px;
 }
+.header_register{
+	background: url(/public/bower_components/images/banner.jpg) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	height: 100px;
+}
 .about_header{
 	background: url(/public/bower_components/images/banner.jpg) no-repeat 0px 0px;
 	background-size: cover;
