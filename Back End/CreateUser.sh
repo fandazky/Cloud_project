@@ -1,7 +1,8 @@
 #!/bin/bash
+cd /etc/openvpn/easy-rsa
 
 client=$1
- 
+
 if [ x$client = x ]; 
 then
     echo "Usage: $0 clientname"
@@ -11,7 +12,7 @@ fi
 if [ ! -e keys/$client.key ];
 then
     echo "Generating keys..."
-    ./vars
+    source ./vars
     ./pkitool $client
     echo "...keys generated."
 fi
@@ -28,6 +29,7 @@ then
     rm keys/$client.*
     tar -C $tmpdir -czvf $tarball .
     echo "...tarball created"
+    python script.py $client
 else
     echo "Nothing to do, so nothing done. (keys/$client.tgz already exists)"
 fi
