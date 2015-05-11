@@ -30,7 +30,19 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+	$(document).ready(function(){
+	    var email,pass;
+	    $("#logout").click(function(){
+		$.post("http://10.151.32.102:4444/logout",{},function(data){       
+		   if(data=='done'){
+		     window.location.href="/";
+		    }
+		});
+	    });
+	});
+</script>
 </head>
 
 <body>
@@ -47,61 +59,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="dashboard.php">Dashboard-Konnect</a>
+        <a class="navbar-brand" href="">Dashboard-Konnect</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-            <ul class="dropdown-menu alert-dropdown">
-                <li>
-                    <a href="#"> Check your data usage <span class="label label-warning">Usage Warning</span></a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">View All</a>
-                </li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                </li>
-            </ul>
-        </li>
+    	<div class="navbar-brand" id="logout" style="cursor:pointer">Logout</div>
     </ul>
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-            <li class="active">
-                <a href="dashboard.php"><i class="fa fa-fw fa-dashboard"></i> Status</a>
-            </li>
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-dollar"></i> Billing <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
-                    <li>
-                        <a href="deposit.php"><i class="fa fa-fw fa-money"></i> Deposit</a>
-                    </li>
-                    <li>
-                        <a href="plans.php"><i class="fa fa-fw fa-exchange"></i> Change Packet</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="tos.php"><i class="fa fa-fw fa-file"></i> Term Of Service</a>
-            </li>
-            <li>
-                <a href="faq.php"><i class="fa fa-fw fa-question-circle"></i> FAQ</a>
-            </li>
-        </ul>
-    </div>
+    <% include listDashboard %>
     <!-- /.navbar-collapse -->
 </nav>
 
@@ -138,8 +103,10 @@
                         <i class="fa fa-key fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><button class="btn btn-primary">Generate Key</button> </div>
-                        <div>Generate Key for Client</div>
+                        <div class="huge">
+                            <a href="/app/create_user"><button class="btn btn-primary">Generate Key</button></a>
+                            <a href="/downloadkey"><button class="btn btn-primary">Download Key</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
