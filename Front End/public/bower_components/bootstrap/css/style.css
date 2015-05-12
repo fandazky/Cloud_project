@@ -21,15 +21,23 @@ body a{
 	-ms-transition:0.5s all;
 }
 .header{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(/public/bower_components/images/banner.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	height: 810px;
 }
+.header_register{
+	background: url(/public/bower_components/images/banner.jpg) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	height: 100px;
+}
 .about_header{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(/public/bower_components/images/banner.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -99,7 +107,7 @@ body a{
 	top: 50%;
 	margin-top:-2px;
 	z-index: 1;
-	background: url(../images/arrow.png);
+	background: url(/public/bower_components/images/arrow.png);
 	width:16px;
 	height:10px;
 }
@@ -258,7 +266,7 @@ a ul.check{
 i.cart{
 	width: 28px;
 	height: 28px;
-	background: url(../images/img-sprite.png)no-repeat -1px 0px;
+	background: url(/public/bower_components/images/img-sprite.png)no-repeat -1px 0px;
 	float: left;
 	margin-right: 6%;
 }
@@ -610,7 +618,7 @@ menu#cl-effect-8 {
 .header_bot_grid span{
 	width:851px;
 	height:604px;
-	background:url(../images/server.png)no-repeat;
+	background:url(/public/bower_components/images/server.png)no-repeat;
 	display:inline-block;
 }
 .content_top{
@@ -619,7 +627,7 @@ menu#cl-effect-8 {
 i.time{
 	width: 40px;
 	height: 50px;
-	background: url(../images/img-sprite.png) -36px -2px;
+	background: url(/public/bower_components/images/img-sprite.png) -36px -2px;
 	display: inline-block;
 }
 .grid_1{
@@ -637,19 +645,19 @@ i.time{
 i.platform{
 	width: 45px;
 	height: 50px;
-	background: url(../images/img-sprite.png) -93px -2px;
+	background: url(/public/bower_components/images/img-sprite.png) -93px -2px;
 	display: inline-block;
 }
 i.fast{
 	width: 45px;
 	height: 50px;
-	background: url(../images/img-sprite.png) -154px -2px;
+	background: url(/public/bower_components/images/img-sprite.png) -154px -2px;
 	display: inline-block;
 }
 i.data{
 	width: 50px;
 	height: 50px;
-	background: url(../images/img-sprite.png) -216px -5px;
+	background: url(/public/bower_components/images/img-sprite.png) -216px -5px;
 	display: inline-block;
 }
 .content_bottom{
@@ -904,7 +912,7 @@ a.contact_btn:hover{
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
-	background: url(../images/search.png) no-repeat 12px 10px;
+	background: url(/public/bower_components/images/search.png) no-repeat 12px 10px;
 	outline: none;
 }
 #go_btn.go_btn_readonly{
@@ -960,7 +968,7 @@ span#include-free {
 	margin-bottom: 0.5em;
 }
 .services{
-	background: url(../images/services.jpg) no-repeat 0px 0px;
+	background: url(/public/bower_components/images/services.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -990,7 +998,7 @@ ul.hosting{
 i.icon1{
 	width: 70px;
 	height: 80px;
-	background: url(../images/img-sprite.png) -289px -7px;
+	background: url(/public/bower_components/images/img-sprite.png) -289px -7px;
 	float:left;
 	margin-right:1.5em;
 }
@@ -1048,35 +1056,35 @@ a.button2:hover{
 i.icon2 {
 	width: 70px;
 	height: 80px;
-	background: url(../images/img-sprite.png) -379px -7px;
+	background: url(/public/bower_components/images/img-sprite.png) -379px -7px;
 	float: left;
 	margin-right: 1.5em;
 }
 i.icon3{
 	width: 70px;
 	height: 60px;
-	background: url(../images/img-sprite.png) -9px -90px;
+	background: url(/public/bower_components/images/img-sprite.png) -9px -90px;
 	float: left;
 	margin-right: 1.5em;
 }
 i.icon4{
 	width: 70px;
 	height: 108px;
-	background: url(../images/img-sprite.png) -100px -77px;
+	background: url(/public/bower_components/images/img-sprite.png) -100px -77px;
 	float: left;
 	margin-right: 1.5em;
 }
 i.icon5{
 	width: 70px;
 	height: 85px;
-	background: url(../images/img-sprite.png) -207px -79px;
+	background: url(/public/bower_components/images/img-sprite.png) -207px -79px;
 	float: left;
 	margin-right: 1.5em;
 }
 i.icon6{
 	width: 70px;
 	height: 85px;
-	background: url(../images/img-sprite.png) -288px -103px;
+	background: url(/public/bower_components/images/img-sprite.png) -288px -103px;
 	float: left;
 	margin-right: 1.5em;
 }
@@ -1107,7 +1115,7 @@ p.m_2{
 .span_5-right span{
 	width:742px;
 	height:533px;
-	background:url(../images/about_server.png)no-repeat;
+	background:url(/public/bower_components/images/about_server.png)no-repeat;
 	display:inline-block;
 }
 .span_5-left {
@@ -1167,7 +1175,7 @@ ul.test .test_desc span.quotes {
 	top: -34px;
 	width: 80px;
 	height: 80px;
-	background: url(../images/quote.png) no-repeat;
+	background: url(/public/bower_components/images/quote.png) no-repeat;
 	opacity: 0.5;
 }
 span.link a{
@@ -1261,7 +1269,7 @@ ul.footer_social li a i {
 	width: 80px;
 	height: 80px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat;
+	background: url(/public/bower_components/images/img-sprite.png)no-repeat;
 }
 ul.footer_social li a i:hover{
 	opacity:0.8;
@@ -2273,7 +2281,7 @@ menu#cl-effect-8 {
 	right: 4px;
 }
 .domain-submit, .domain-submit-disabled {
-	background: url(../images/search.png) no-repeat 12px 6px;
+	background: url(/public/bower_components/images/search.png) no-repeat 12px 6px;
 }
 .tlds {
 	top: 13px;

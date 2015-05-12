@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard-Konnect</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--"/public/bower_components/bootstrap/dist/css/bootstrap.min.css" -->
+    <link href="public/bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="public/bower_components/bootstrap/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="public/bower_components/bootstrap/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+	$(document).ready(function(){
+	    var email,pass;
+	    $("#logout").click(function(){
+		$.post("http://10.151.32.102:4444/logout",{},function(data){       
+		   if(data=='done'){
+		     window.location.href="/";
+		    }
+		});
+	    });
+	});
+</script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">Dashboard-Konnect</a>
+    </div>
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav">
+    	<div class="navbar-brand" id="logout" style="cursor:pointer">Logout</div>
+    </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <% include listDashboard %>
+    <!-- /.navbar-collapse -->
+</nav>
+
+<div id="page-wrapper">
+
+<div class="container-fluid">
+
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Server Status <small>Statistics Overview</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-info-circle"></i>  <strong>Please choose one of our plans</strong> please go to <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">plans option menu</a> to choose your plans
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-key fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">
+                            <a href="/app/create_user"><button class="btn btn-primary">Generate Key</button></a>
+                            <a href="/downloadkey"><button class="btn btn-primary">Download Key</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">3</div>
+                        <div>User Active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pie-chart fa-fw"></i> Data Usage</h3>
+            </div>
+            <div class="panel-body">
+                <div id="morris-donut-chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-history fa-fw"></i> History Panel</h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>Number #</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Event</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>3326</td>
+                            <td>10/21/2013</td>
+                            <td>3:29 PM</td>
+                            <td>Key Generated</td>
+                        </tr>
+                        <tr>
+                            <td>3325</td>
+                            <td>10/21/2013</td>
+                            <td>3:20 PM</td>
+                            <td>User coneected</td>
+                        </tr>
+                        <tr>
+                            <td>3324</td>
+                            <td>10/21/2013</td>
+                            <td>3:03 PM</td>
+                            <td>initialize users connection</td>
+                        </tr>
+                        <tr>
+                            <td>3323</td>
+                            <td>10/21/2013</td>
+                            <td>3:00 PM</td>
+                            <td>User Disconected</td>
+                        </tr>
+                        <tr>
+                            <td>3322</td>
+                            <td>10/21/2013</td>
+                            <td>2:49 PM</td>
+                            <td>initialize users connection</td>
+                        </tr>
+                        <tr>
+                            <td>3321</td>
+                            <td>10/21/2013</td>
+                            <td>2:23 PM</td>
+                            <td>User coneecte</td>
+                        </tr>
+                        <tr>
+                            <td>3320</td>
+                            <td>10/21/2013</td>
+                            <td>2:15 PM</td>
+                            <td>Connection error4</td>
+                        </tr>
+                        <tr>
+                            <td>3319</td>
+                            <td>10/21/2013</td>
+                            <td>2:13 PM</td>
+                            <td>Connection stopped</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <a href="#">View All History <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Data Usage Statistict</h3>
+            </div>
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<div class="row">
+
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="assets/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="assets/js/plugins/morris/raphael.min.js"></script>
+<script src="assets/js/plugins/morris/morris.min.js"></script>
+<script src="assets/js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>
