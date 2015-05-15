@@ -113,30 +113,23 @@
 <!-- -->
 	<div class="column three-fourths">
       <div class="context-loader large-format-loader">
-  <p><img alt="" height="64" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-128-338974454bb5c32803e82f601beb051d373744b024fe8742a76009700fd7e033.gif" width="64"></p>
-  <p>Loading…</p>
 </div>
 
           <!-- Change Password -->
     <div class="boxed-group">
       <h3>Change password</h3>
       <div class="boxed-group-inner">
-        <form accept-charset="UTF-8" action="/account" class="edit_user" id="change_password" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="5/pSQfrawNMqflovq0myrghl0J/f0FjIdrj0IO7crIuSl72mX1rm4EKijFC+iNPgN1Xh1OG+F7eqYp/keXSxZA=="></div>
-          <dl class="form password-confirmation-form">
-            <dt><label for="user_old_password">Old password</label></dt>
-            <dd><input id="user_old_password" name="user[old_password]" required="required" tabindex="2" type="password"></dd>
-          </dl>
+        <form accept-charset="UTF-8" action="/newPassword" class="edit_user" id="change_password" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="5/pSQfrawNMqflovq0myrghl0J/f0FjIdrj0IO7crIuSl72mX1rm4EKijFC+iNPgN1Xh1OG+F7eqYp/keXSxZA=="></div>
           <dl class="form password-confirmation-form">
             <dt><label for="user_new_password">New password</label></dt>
-            <dd><input data-autocheck-url="/signup_check/password" id="user_new_password" name="user[password]" required="required" tabindex="2" type="password"></dd>
+            <dd><input data-autocheck-url="/signup_check/password" id="user_new_password" name="newPassword" required="required" tabindex="2" type="password"></dd>
           </dl>
           <dl class="form password-confirmation-form">
             <dt><label for="user_confirm_new_password">Confirm new password</label></dt>
-            <dd><input id="user_confirm_new_password" name="user[password_confirmation]" required="required" tabindex="2" type="password"></dd>
+            <dd><input id="user_confirm_new_password" name="confPassword" required="required" tabindex="2" type="password"></dd>
           </dl>
           <p>
             <button class="btn" tabindex="2">Update password</button>
-            <span><a href="/password_reset">I forgot my password</a></span>
           </p>
 </form>          <p class="help"><i class="octicon octicon-question"></i>Looking for two-factor authentication? You can find it in <a href="/settings/security">Security</a>.</p>
       </div>
@@ -146,14 +139,14 @@
     <div class="boxed-group">
       <h3>Change username</h3>
       <div class="boxed-group-inner">
-          <form accept-charset="UTF-8" action="/account" class="edit_user" id="change_password" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="5/pSQfrawNMqflovq0myrghl0J/f0FjIdrj0IO7crIuSl72mX1rm4EKijFC+iNPgN1Xh1OG+F7eqYp/keXSxZA=="></div>
+          <form accept-charset="UTF-8" action="/newUsername" class="edit_user" id="change_password" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="5/pSQfrawNMqflovq0myrghl0J/f0FjIdrj0IO7crIuSl72mX1rm4EKijFC+iNPgN1Xh1OG+F7eqYp/keXSxZA=="></div>
           
           <dl class="form password-confirmation-form">
-            <dt><label for="user_confirm_new_password">Confirm new password</label></dt>
-            <dd><input id="user_confirm_new_password" name="user[password_confirmation]" required="required" tabindex="2" type="password"></dd>
+            <dt><label for="user_confirm_new_password">New username</label></dt>
+            <dd><input id="user_confirm_new_password" name="newUsername" required="required" tabindex="2" type="password"></dd>
           </dl>
           <p>
-            <button class="btn" tabindex="2">Update password</button>
+            <button class="btn" tabindex="2">Update username</button>
           </p>
 </form>
       </div>

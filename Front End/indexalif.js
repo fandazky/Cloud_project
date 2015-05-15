@@ -72,9 +72,7 @@ var cekAutentikasi = function(req, res, done) {
     if(req.isAuthenticated()) {
         done();
     } else {
-	       
-	 res.redirect('/home');
-
+        res.redirect('/home');
     }
 }
 
@@ -82,11 +80,8 @@ var cekAutentikasi = function(req, res, done) {
 /*------------------------------------GET---------------------------------------------*/
 
 app.get('/', cekAutentikasi, function(req, res) {
-    res.render("dashboard", { username: req.user.username });
+    res.render("dashboard");
 });
-
-
-
 
 app.get('/register', function(req, res) {
     if(req.isAuthenticated()){
@@ -109,7 +104,7 @@ app.get('/home', function(req, res) {
 });*/
 
 app.get('/dashboard', cekAutentikasi, function(req, res) {
-    res.render('dashboard',{username: req.user.username});
+    res.render('dashboard');
 });
 
 app.get('/billingA', cekAutentikasi, function(req, res) {
@@ -152,14 +147,7 @@ app.get('/invite',cekAutentikasi, function(req,res){
 	var mailOptions={
 		to : req.query.to,
 		subject : "Invitation From OPenVPN cloud Service",
-		text : 'You have been invited by' + req.user.username + ' to use OpenVPN services Cloud Service. Download this Configuration File to use our services\n',
-		attachments: 
-		[
-        		{   
-            			fileName: req.user.username + '.ovpn',
-            			filePath: '/home/ripas/vpnClient/' + req.user.username + '.ovpn' 
-        		}
-		]
+		text : 'You have been invited by to use OpenVPN services Cloud Service. Download this Configuration File to use our services '+'/home/ripas/vpnClient/'+ req.user.username + '.ovpn', req.user.username + '.ovpn'
 	}
 	//console.log(to);
 	console.log(mailOptions);
@@ -204,12 +192,6 @@ app.post('/newPassword', cekAutentikasi, function (req, res){
     }
     res.redirect('/dashboard');
 });
-app.post('/newUsername', cekAutentikasi, function (req, res){
-    var newUsername = req.body.newUsername;
-    connection.query("UPDATE user set username='" + newUsername + "' WHERE username='" + req.user.username + "'", function(err, rows, fields) {});
-    res.redirect('/dashboard');
-});
-
 
 app.post('/logout', function (req, res){
     if(req.isAuthenticated()){
@@ -238,7 +220,6 @@ console.log('flag: '+global.flag);
 }	
     ps.on('exit', function(code) {
         if(code == 0) {
-		//res.redirect('/dashboard');
             res.end('Sukses');
         } else {
             res.end('Gagal');
