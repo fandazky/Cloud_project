@@ -29,6 +29,7 @@ var sess;
 var flag  = 1;
 
 var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -100,7 +101,12 @@ app.get('/register', function(req, res) {
 
 //--dari form login di dalam home.ejs
 app.get('/home', function(req, res) {
-    res.render('home');
+    if(req.isAuthenticated()){
+       res.redirect('/dashboard');
+    }
+    else{
+       res.render('home');
+    }
 });
 
 /*app.get('/plans', cekAutentikasi, function(req, res) {
@@ -190,7 +196,30 @@ app.post('/register', function(req, res) {
     
     connection.query("INSERT INTO user (nama, email, username, password, paket) VALUES ('" + nama + "','"+ email +"', '"+ username +"', '"+ password +"', '"+ 1 +"')", 
         function(err, rows, fields){});
+    console.log('flag: '+global.flag);
+
+    if(global.flag==1) {
+        var ps = child_process.spawn('ssh', ['ripas@10.151.32.101', 'bash /etc/openvpn/easy-rsa/CreateUser.sh.old ' + username]);
+        global.flag = 2;
+        console.log('membuat user di 10.151.32.101');
+    }
+    else {
+        var ps = child_process.spawn('ssh', ['ripas@10.151.32.100', 'bash /etc/openvpn/easy-rsa/CreateUser.sh.old ' + username]);
+        console.log('membuat user di 10.151.32.100');
+        global.flag = 1;
+    }
+    ps.on('exit', function(code) {
+        if(code == 0) {
+                //res.redirect('/dashboard');
+            res.end('Sukses');
+        } else {
+            res.end('Gagal');
+
+        }
+
+    });
     res.redirect('/home');
+ 
 });
 
 app.post('/newPassword', cekAutentikasi, function (req, res){
@@ -224,7 +253,7 @@ app.post('/logout', function (req, res){
 
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------BACKEND-----------------------------------------*/
-app.get('/app/create_user', cekAutentikasi, function(req, res) {
+/*app.get('/app/create_user', cekAutentikasi, function(req, res) {
 console.log('flag: '+global.flag);
     if(global.flag==1) {
     	var ps = child_process.spawn('ssh', ['ripas@10.151.32.101', 'bash /etc/openvpn/easy-rsa/CreateUser.sh.old ' + req.user.username]);
@@ -248,6 +277,7 @@ console.log('flag: '+global.flag);
     });
 
 });
+*/
 
 app.get('/downloadkey', function(req, res) {
     //sess = req.session;

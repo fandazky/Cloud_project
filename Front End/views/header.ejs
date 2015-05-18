@@ -9,8 +9,8 @@
 					<a class="toggleMenu" href="#"><img src="/public/bower_components/images/nav_icon.png" alt="" /> </a>
 					<ul class="nav" id="nav">
 					  <li><a href="home">Home</a></li>
-					  <li><a href="plans">Plans</a></li>
-					  <li><a href="support">Support</a></li>
+					  <li><a href="#plan">Plans</a></li>
+					  <li><a href="#support">Support</a></li>
 					  <li><a href="register">Register</a></li>
 					</ul>
 					<script type="text/javascript" src="/public/bower_components/js/responsive-nav.js"></script>
@@ -52,3 +52,19 @@
    	  <div class="clearfix"></div>
    	  </div>
    </div>
+<script>
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+</script>
