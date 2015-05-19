@@ -1,0 +1,70 @@
+
+    <div class="container">
+      <div class="header_bottom"> 
+       <div class="col-xs-3 logo">
+   	   	 <a href="home"><img src="/public/bower_components/images/logo.png" style="width: 50%" alt=""/></a>
+   	   </div>
+   	   <div class="col-xs-9 header_nav">
+	   	   <div class="col-xs-9 menu">
+					<a class="toggleMenu" href="#"><img src="/public/bower_components/images/nav_icon.png" alt="" /> </a>
+					<ul class="nav" id="nav">
+					  <li><a href="home">Home</a></li>
+					  <li><a href="#plan">Plans</a></li>
+					  <li><a href="#support">Support</a></li>
+					  <li><a href="register">Register</a></li>
+					</ul>
+					<script type="text/javascript" src="/public/bower_components/js/responsive-nav.js"></script>
+		  </div>
+		  
+		  <div class="col-xs-3 header_but">
+			  <menu class="cl-effect-8" id="cl-effect-8">
+				 <a class="popup-with-zoom-anim" href="#login">Log In</a>
+				 <div id="login" class="mfp-hide">
+									<div class="pop_up">
+									 	<div class="payment-online-form-left">
+											<form method="post" action="">
+												<h4><span class="shipping1"> </span>Log In</h4>
+												<ul>
+													<li><input name="username" class="text-box-dark" type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
+													
+												</ul>
+												<ul>
+													<li><input name="password" class="" type="password" 
+													style=""
+													value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
+													
+												</ul>
+											
+												<ul class="payment-sendbtns">
+													<li><input type="submit" value="Login"></li>
+												</ul>
+												
+												
+												<div class="clearfix"> </div>
+											</form>
+										</div>
+						  			</div>
+								</div>
+			  </menu>	
+		  </div>
+	      <div class="clearfix"></div>		
+   	  </div>
+   	  <div class="clearfix"></div>
+   	  </div>
+   </div>
+<script>
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+</script>
