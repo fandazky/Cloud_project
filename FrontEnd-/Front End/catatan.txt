@@ -1,0 +1,8 @@
+latar belakang / pendahuluan
+personil pembagian kerja : mempresentasikan apa yang dibuat sebaik mungkin
+profile para developer
+arsitektur
+demo - mulai dari front end, billing, fungsi dari aplikasi
+kesimpulan
+20 menit perkelompok
+buat video kalau perlu
