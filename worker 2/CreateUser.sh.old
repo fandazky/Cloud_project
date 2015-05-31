@@ -1,0 +1,40 @@
+#!/bin/bash
+cd /etc/openvpn/easy-rsa
+
+client=$1
+user=$2
+if [ x$client = x ]; 
+then
+    echo "Usage: $0 clientname"
+    exit 1
+fi
+
+if [ ! -e keys/client/$client.key ];
+then
+    echo "Generating keys..."
+    source ./vars
+    ./pkitool $client
+    echo "...keys generated."
+fi
+tarball=./keys/client/$client.tgz
+
+if [ ! -e $tarball ];
+then
+    echo "Creating tarball..."
+    tmpdir=keys/client/$client
+    mkdir $tmpdir
+    cp keys/ca.crt $tmpdir/
+    cp keys/$client.key $tmpdir/$client.key
+    cp keys/$client.crt $tmpdir/$client.crt
+    rm keys/$client.*
+    cp keys/index.txt.old keys/index.txt
+    cp keys/serial.old keys/serial
+    #echo 'V       250508134316Z           01      unknown /C=ID/ST=CA/L=SanFrancisco/O=Fort-Funston/OU=MyOrganizationalUnit/CN=server/name=EasyRSA/emailAddress=me@myhost.mydomain' > keys/index.txt
+    rm keys/0201.pem
+    tar -C $tmpdir -czvf $tarball .
+    echo "...tarball created"
+
+else
+    echo "Nothing to do, so nothing done. (keys/$client.tgz already exists)"
+fi
+ python script.py $client $user
